@@ -27,7 +27,7 @@ public class PomocnikGry {
         return daneWejsciowe.toLowerCase();
     }
 
-    public ArrayList rozmiescPortal(int wielkoscPortalu) {
+    public ArrayList<String> rozmiescPortal(int wielkoscPortalu) {
         ArrayList<String> zajetePola = new ArrayList<>();
         String[] wspolrzedneLnc = new String[wielkoscPortalu];
         String pomoc = null;
@@ -44,7 +44,7 @@ public class PomocnikGry {
 
         while (!powodzenie & prob++ < 200) {
             polozenie = (int) (Math.random() * wielkoscPlanszy);
-            System.out.print(" sprawdz " + polozenie);
+           // System.out.print(" sprawdz " + polozenie);
             int x = 0;
             powodzenie = true;
             while (powodzenie && x < wielkoscPortalu) {
@@ -67,7 +67,7 @@ public class PomocnikGry {
         int x = 0;
         int wiersz = 0;
         int kolumna = 0;
-        System.out.println("\n");
+       // System.out.println("\n");
         while (x < wielkoscPortalu){
           plansza[wspolrzedne[x]] = 1;
           wiersz = wspolrzedne[x] / dlugoscPlanszy;
@@ -75,9 +75,9 @@ public class PomocnikGry {
           pomoc = String.valueOf(alfabet.charAt(kolumna));
           zajetePola.add(pomoc.concat(Integer.toString(wiersz)));
           x++;
-            System.out.print(" współrzędne " + x + " = " + zajetePola.get(x-1));
+          //  System.out.print(" współrzędne " + x + " = " + zajetePola.get(x-1));
         }
-        System.out.println("\n");
+       // System.out.println("\n");
         return zajetePola;
     }
 }

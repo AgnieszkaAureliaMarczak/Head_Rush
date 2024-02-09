@@ -9,14 +9,19 @@ public class PortalGraMax {
     private int iloscRuchow = 0;
     private int iloscPortali = 3;
 
+    public PortalGraMax(PomocnikGry pomocnik) {
+        this.pomocnik = pomocnik;
+    }
+
     public static void main(String[] args) {
-        PortalGraMax portalGraMax = new PortalGraMax();
+        PortalGraMax portalGraMax = new PortalGraMax(new PomocnikGry());
+        portalGraMax.przygotujGre();
     }
 
     private void przygotujGre() {
         utworzPortaleIWpiszDoTablicy();
         nadajNazwyPortali();
-
+        rozmiescPortaleNaPlanszy();
     }
 
     private void utworzPortaleIWpiszDoTablicy() {
@@ -31,6 +36,13 @@ public class PortalGraMax {
         listaPortali.get(2).setNazwa("go2.pl");
     }
 
+    private void rozmiescPortaleNaPlanszy() {
+        for (int i = 0; i < iloscPortali; i++) {
+            ArrayList<String> polaPolozenia = pomocnik.rozmiescPortal(3);
+            listaPortali.get(i).setPolaPolozenia(polaPolozenia);
+            System.out.println(polaPolozenia);
+        }
+    }
 
 
     private void rozpocznijGre() {
@@ -44,28 +56,6 @@ public class PortalGraMax {
     private void zakonczGre() {
 
     }
-
-    private PomocnikGry utworzPomocnikaGry() {
-        return new PomocnikGry();
-    }
-
-    public void umiescPortaleNaPlanszy() {
-
-    }
-
-   /* public String sprawdzWszystkiePortale(String ruch) {
-        String wynik = "pudlo";
-        int indeks = polaPolozenia.indexOf(ruch);
-        if (indeks >= 0) {
-            polaPolozenia.remove(indeks);
-            if (polaPolozenia.isEmpty()){
-                wynik = "zatopiony";
-            } else {
-                wynik = "trafiony";
-            }
-        }
-        return wynik;
-    }*/
 
     public void kontynuujGre() {
 
