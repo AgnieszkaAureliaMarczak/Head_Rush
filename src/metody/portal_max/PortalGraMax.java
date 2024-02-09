@@ -6,50 +6,50 @@ import java.util.List;
 public class PortalGraMax {
     private PomocnikGry pomocnik;
     private List<Portal> listaPortali = new ArrayList<>();
-    private int iloscRuchow;
+    private int iloscRuchow = 0;
+    private int iloscPortali = 3;
 
     public static void main(String[] args) {
         PortalGraMax portalGraMax = new PortalGraMax();
     }
 
-    private void przygotujGre(){
+    private void przygotujGre() {
+        utworzPortaleIWpiszDoTablicy();
+        nadajNazwyPortali();
 
     }
 
-    private void rozpocznijGre(){
+    private void utworzPortaleIWpiszDoTablicy() {
+        for (int i = 0; i < iloscPortali; i++) {
+            listaPortali.add(new Portal());
+        }
+    }
+
+    private void nadajNazwyPortali() {
+        listaPortali.get(0).setNazwa("onet.pl");
+        listaPortali.get(1).setNazwa("wp.pl");
+        listaPortali.get(2).setNazwa("go2.pl");
+    }
+
+
+
+    private void rozpocznijGre() {
 
     }
 
-    private void sprawdzRuchGracza(){
+    private void sprawdzRuchGracza() {
 
     }
 
-    private void zakonczGre(){
+    private void zakonczGre() {
 
     }
 
-    private PomocnikGry utworzPomocnikaGry(){
+    private PomocnikGry utworzPomocnikaGry() {
         return new PomocnikGry();
     }
 
-
-
-    public void utworzPortale() {
-        /*int[] polozeniePortalu = new int[3];
-        Random random = new Random();
-        int poczatekPortalu = random.nextInt(5);
-        for (int i = 0; i < polozeniePortalu.length; i++) {
-            polozeniePortalu[i] = poczatekPortalu;
-            poczatekPortalu++;
-        }
-        prostyPortal.setPolaPolozenia(polozeniePortalu);*/
-    }
-
-    public void nadajNazwy(){
-
-    }
-
-    public void umiescPortaleNaPlanszy(){
+    public void umiescPortaleNaPlanszy() {
 
     }
 
@@ -67,7 +67,7 @@ public class PortalGraMax {
         return wynik;
     }*/
 
-    public void kontynuujGre(){
+    public void kontynuujGre() {
 
     }
 }

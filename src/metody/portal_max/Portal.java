@@ -6,11 +6,6 @@ public class Portal {
     private ArrayList<String> polaPolozenia;
     private String nazwa;
 
-    public Portal(ArrayList<String> polaPolozenia, String nazwa) {
-        this.polaPolozenia = polaPolozenia;
-        this.nazwa = nazwa;
-    }
-
     public void setPolaPolozenia(ArrayList<String> polaPolozenia) {
         this.polaPolozenia = polaPolozenia;
     }
