@@ -1,4 +1,7 @@
-package metody;
+package metody.prosty_portal;
+
+import metody.prosty_portal.ProstyPortal;
+import metody.prosty_portal.ProstyPortalGra;
 
 public class ProstyPortalTester {
     public static void main(String[] args) {

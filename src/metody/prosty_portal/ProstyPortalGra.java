@@ -1,4 +1,4 @@
-package metody;
+package metody.prosty_portal;
 
 import java.util.Random;
 import java.util.Scanner;

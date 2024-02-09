@@ -1,4 +1,4 @@
-package metody;
+package metody.prosty_portal;
 
 public class ProstyPortal {
     int[] polaPolozenia;
