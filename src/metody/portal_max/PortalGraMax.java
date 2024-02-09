@@ -44,6 +44,12 @@ public class PortalGraMax {
         }
     }
 
+    private void wyswietlKomunikaty(){
+        System.out.println("Twoim celem jest zatopienie trzech portali");
+        System.out.println("onet.pl, wp.pl, go2.pl");
+        System.out.println("Postaraj sie je zatopić w jak najmniejszej ilości ruchów");
+    }
+
 
     private void rozpocznijGre() {
 
