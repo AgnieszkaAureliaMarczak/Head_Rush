@@ -45,17 +45,17 @@ public class PortalGraMax {
     }
 
     private void rozmiescPortaleNaPlanszy() {
-        for (int i = 0; i < iloscPortali; i++) {
+        for (Portal portal : listaPortali) {
             ArrayList<String> polaPolozenia = pomocnik.rozmiescPortal(3);
-            listaPortali.get(i).setPolaPolozenia(polaPolozenia);
+            portal.setPolaPolozenia(polaPolozenia);
             System.out.println(polaPolozenia);
         }
     }
 
     private void wyswietlKomunikaty() {
-        System.out.println("Twoim celem jest zatopienie trzech portali");
+        System.out.println("Twoim celem jest zatopienie trzech portali:");
         System.out.println("onet.pl, wp.pl, go2.pl");
-        System.out.println("Postaraj sie je zatopić w jak najmniejszej ilości ruchów");
+        System.out.println("Postaraj sie je zatopić w jak najmniejszej ilości ruchów.");
     }
 
 
@@ -69,22 +69,24 @@ public class PortalGraMax {
     private void sprawdzRuchGracza(String ruch) {
         iloscRuchow++;
         String wynik = "pudło";
-        int strzal = Integer.parseInt(ruch);
         for (Portal portal : listaPortali) {
-
-
-            // portal.sprawdz();
-            //if zatopiony >> usunac portal
+            wynik = portal.sprawdz(ruch);
+            if (wynik.equals("trafiony")) {
+                break;
+            } else if (wynik.equals("zatopiony")) {
+                listaPortali.remove(portal);
+                break;
+            }
         }
         System.out.println(wynik);
     }
 
     private void zakonczGre() {
         System.out.println("Koniec gry");
-        if (iloscRuchow < 15) {
+        if (iloscRuchow <= 15) {
             System.out.println("Gratulacje! Zatopiłeś wszystkie portale w " + iloscRuchow + " ruchów.");
         } else {
-            System.out.println("Słabo ci poszło.");
+            System.out.println("Słabo ci poszło. Ponad 15 prób :(");
         }
     }
 }

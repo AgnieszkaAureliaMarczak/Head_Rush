@@ -13,4 +13,19 @@ public class Portal {
     public void setNazwa(String nazwa) {
         this.nazwa = nazwa;
     }
+
+    public String sprawdz(String ruch){
+        String wynik = "pudło";
+        int indeks = polaPolozenia.indexOf(ruch);
+        if (indeks >= 0){
+            polaPolozenia.remove(indeks);
+            if (polaPolozenia.isEmpty()){
+                wynik = "zatopiony";
+                System.out.println("Zatopiłeś portal o nazwie " + nazwa + ".");
+            } else {
+                wynik = "trafiony";
+            }
+        }
+        return wynik;
+    }
 }
