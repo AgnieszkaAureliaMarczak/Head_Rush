@@ -1,6 +1,7 @@
 package graphic_user_interface;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -25,5 +26,12 @@ public class SimpleGUI1 implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         button.setText("I've been clicked");
+    }
+}
+
+class MyGraphicPanel extends JPanel{
+    public void paintComponent(Graphics g){
+        g.setColor(Color.magenta);
+        g.fillOval(20,50, 100,100);
     }
 }
