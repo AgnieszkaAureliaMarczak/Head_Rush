@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SimpleGUI1 implements ActionListener {
-    JButton button;
+    JFrame frame;
 
     public static void main(String[] args) {
         SimpleGUI1 appGUI = new SimpleGUI1();
@@ -14,20 +14,23 @@ public class SimpleGUI1 implements ActionListener {
     }
 
     public void letsStart(){
-        JFrame frame = new JFrame();
-        MyGraphicPanel myPanel = new MyGraphicPanel();
-       /* button = new JButton("Clcik Me");
-        button.addActionListener(this);
-        frame.getContentPane().add(button);*/
-        frame.getContentPane().add(BorderLayout.CENTER, myPanel);
+        frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JButton button = new JButton("Color change");
+        button.addActionListener(this);
+
+        MyGraphicPanel myPanel = new MyGraphicPanel();
+
+        frame.getContentPane().add(BorderLayout.CENTER, myPanel);
+        frame.getContentPane().add(BorderLayout.SOUTH, button);
         frame.setSize(700,600);
         frame.setVisible(true);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        button.setText("I've been clicked");
+        frame.repaint();
     }
 }
 
