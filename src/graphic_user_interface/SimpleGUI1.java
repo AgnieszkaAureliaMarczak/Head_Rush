@@ -50,7 +50,7 @@ class MyGraphicPanel extends JPanel{
 
         GradientPaint gradient = new GradientPaint(70.f, 70.f, startColor, 200.f, 70.f, endColor);
         g2d.setPaint(gradient);
-        g.fillOval(70,70, 200,200);
+        g2d.fillOval(70,70, 200,200);
     }
 
     private int drawColorCode(){
