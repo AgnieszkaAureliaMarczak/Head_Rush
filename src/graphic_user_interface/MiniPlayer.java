@@ -22,7 +22,7 @@ public class MiniPlayer {
             Sequence sequence = new Sequence(Sequence.PPQ, 4);
             Track track = sequence.createTrack();
             int r;
-            for (int i = 5; i < 60; i++) {
+            for (int i = 5; i < 60; i+=4) {
                 r = (int) ((Math.random() * 50) + 1);
                 track.add(createEvent(144, 1, r, 100, i));
                 track.add(createEvent(176, 1, 127, 0, i));
